@@ -11,9 +11,9 @@ import java.util.Scanner;
  *Aquest codi ens demana quants membres té un gimnas, i la edad de cadascun, segons lo que posem,
  * ens donara la mitja, la edad maxima i minima de tots, les personas majors d'edats i les persones menors d'edats, i per ultim quantes persones superan la mitja d'edat.
  * 
- * @author dam1
+ * @author yxel14
  */
-public class Gimnas_Joel {
+public class gimnas_Joel {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
