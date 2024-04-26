@@ -1,0 +1,101 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+package com.mycompany.practicap8_joel;
+
+import java.util.Scanner;
+
+/**
+ *
+ *
+ *Aquest codi ens demana quants membres té un gimnas, i la edad de cadascun, segons lo que posem,
+ * ens donara la mitja, la edad maxima i minima de tots, les personas majors d'edats i les persones menors d'edats, i per ultim quantes persones superan la mitja d'edat.
+ * 
+ * @author dam1
+ */
+public class Gimnas_Joel {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Quants integrants té el gimnas?");
+        if (sc.hasNextInt()) {
+            int socis = sc.nextInt();
+           
+
+            int[] edades = new int[socis];
+            for (int i = 0; i < socis; i++) {
+                System.out.println("introduce la edad del socio " + (i + 1));
+                int edats = sc.nextInt();
+                if (14 <= edats && edats <= 100) {
+                    edades[i] = edats;
+               
+                }
+                else{
+                System.out.println(" Has de posar una edat entre el 14 i el 100, l'aplicació s'apagara automaticament.");
+                System.exit(0);
+
+            }
+            }
+            int edada = 0;
+            for (int i = 0; i < socis; i++) {
+                System.out.println(("soci " + (i + 1) + ":") + "\t" + edades[i]);
+            }
+            for (int i = 0; i < socis; i++) {
+
+                edada = edada + edades[i];
+            }
+            System.out.println("La suma d'edats total es:" + edada);
+            int media = 0;
+            media = edada / socis;
+            System.out.println("La media de totes les edats introduides és: " + media);
+
+            int edadmax = 0;
+            for (int i = 0; i < socis; i++) {
+                if (edadmax < edades[i]) {
+                    edadmax = edades[i];
+
+                }
+            }
+            System.out.println("la edad maxima del rang es de:"+edadmax);
+            int edadmin = 100;
+            for (int i = 0; i < socis; i++) {
+                if (edadmin > edades[i]) {
+                    edadmin = edades[i];
+
+                }
+            }
+            System.out.println("la edad minima del rang es de:"+edadmin);
+            int majors = 0;
+            for (int i = 0; i < socis; i++) {
+                if (edades[i] >= 18) {
+
+                    majors = majors + 1;
+                }
+            }
+            System.out.println("Hi ha " + majors + " majors d'edat entre tots els socis");
+
+            int menors = 0;
+            for (int i = 0; i < socis; i++) {
+                if (edades[i] <= 18) {
+
+                    menors = menors + 1;
+                }
+            }
+            System.out.println("Hi ha " + menors + " menors d'edat entre tots els socis");
+
+            int majorsmitja = 0;
+            for (int i = 0; i < socis; i++) {
+                if (edades[i] >= media) {
+                    majorsmitja = majorsmitja + 1;
+
+                }
+
+            }
+
+        } else {
+            System.out.println("Por favor, ingresa un valor entero válido.");
+        }
+        sc.close();
+    }
+}
