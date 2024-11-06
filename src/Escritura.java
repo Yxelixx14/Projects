@@ -9,8 +9,9 @@ public class Escritura  {
 
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
             for (int i = 1; i < 11; i++) {
-                String info = "Fila nombre:" + i + "\n";
+                String info = "Fila nombre:" + i;
                 bw.write(info);
+                bw.newLine();
             }
         }catch(IOException e){
             System.out.println("error");
